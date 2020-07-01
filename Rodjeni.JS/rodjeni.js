@@ -1,7 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const URL = 'https://www.banjaluka.rs.ba/gradjani/iz-maticnih-knjiga/?sr_pismo=lat'
+const URL = 'http://www.banjaluka.rs.ba/iz-maticnih-knjiga-arhiva-2019-godina/?sr_pismo=lat'
 
 var result = [];
 var imena = {};
@@ -38,5 +38,5 @@ axios.get(URL).then(function(response) {
     sortable.sort(function (a, b) {
         return b.broj - a.broj;
     });
-    console.log(sortable);
+    console.log(JSON.stringify(sortable));
 })
